@@ -11,7 +11,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import org.xml.sax.SAXException;
+
 import java.io.IOException;
+
+import javax.xml.parsers.ParserConfigurationException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,12 +45,24 @@ public class MainActivity extends AppCompatActivity {
         protected String doInBackground(String...params) {
 
             BartApi testBartString = new BartApi();
-            try {
+            try
+            {
                 ApiString = testBartString.returnString();
                 return "";
-            } catch (IOException e) {
+            }
+            catch (IOException e)
+            {
                 return "Not Working";
             }
+            catch (ParserConfigurationException e)
+            {
+                e.printStackTrace();
+            }
+            catch (SAXException e)
+            {
+                e.printStackTrace();
+            }
+            return "Not Working";
         }
         @Override
         protected void onPostExecute(String result) {
