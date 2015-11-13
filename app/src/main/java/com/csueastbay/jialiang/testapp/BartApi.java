@@ -1,15 +1,9 @@
 package com.csueastbay.jialiang.testapp;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.*;
 import java.util.List;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.ParserConfigurationException;
@@ -25,16 +19,7 @@ import org.xml.sax.SAXException;
  */
 public class BartApi {
 
-    private static InputStream doGet(String url) throws ClientProtocolException, IOException {
-        HttpClient httpClient = new DefaultHttpClient();
-        HttpGet request = new HttpGet(url);
-        HttpResponse response = httpClient.execute(request);
-        InputStream inputStream = response.getEntity().getContent();
-
-        return inputStream;
-    }
-
-    public String returnString() throws ClientProtocolException, IOException, ParserConfigurationException, SAXException {
+    public String returnString() throws IOException, ParserConfigurationException, SAXException {
 
         String contentString;
 
