@@ -16,4 +16,4 @@
 <translate xmlns:android="http://schemas.android.com/apk/res/android"
            android:interpolator="@android:anim/accelerate_interpolator"
            android:fromYDelta="0" android:toYDelta="50%p"
-           android:duration="@android:integer/config_mediumAnimTime"/><!-- From: file:/usr/local/google/buildbot/repo_clients/https___googleplex-android.googlesource.com_a_platform_manifest.git/mnc-sdk-release/frameworks/support/v7/appcompat/res/anim/abc_slide_out_bottom.xml --><!-- From: file:/root/Android/StudioProjects/Gamma-Project-1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/anim/abc_slide_out_bottom.xml -->
+           android:duration="@android:integer/config_mediumAnimTime"/><!-- From: file:/usr/local/google/buildbot/repo_clients/https___googleplex-android.googlesource.com_a_platform_manifest.git/mnc-sdk-release/frameworks/support/v7/appcompat/res/anim/abc_slide_out_bottom.xml --><!-- From: file:/C:/Users/Jialiang/Google%20Drive/SCHOOL/2015%20Fall/CS4310%20Software%20Engineering/Project/Gamma-Project-1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/anim/abc_slide_out_bottom.xml -->

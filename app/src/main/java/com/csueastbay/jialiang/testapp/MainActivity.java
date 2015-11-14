@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             BartApi testBartString = new BartApi();
             try
             {
-                ApiString = testBartString.returnString();
+                ApiString = testBartString.getDestinationTime("DALY","BALB");
                 return "";
             }
             catch (IOException e)

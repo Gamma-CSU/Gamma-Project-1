@@ -1,16 +1,10 @@
 package com.csueastbay.jialiang.testapp;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.ParserConfigurationException;
@@ -21,6 +15,9 @@ import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by Jialiang on 10/13/2015.
  */
@@ -30,40 +27,56 @@ public class BartApi {
     // API key
     String key = "key=MW9S-E7SL-26DU-VV8V&b=2&a=2&l=1" ;
     // Station abbreviations list
-    List<String> stations = new ArrayList<>();
+    Map stations = new HashMap<String, String>();
 
     // Default constructor adds stations to the list
     BartApi() {
-        stations.add("DALY"); // Daly City
-        stations.add("BALB"); // Balboa
-        stations.add("GLEN"); // Glen Park
-        stations.add("24TH"); // 24th st
-        stations.add("16TH"); // 16th st
-        stations.add("CIVC"); // Civic center
-        stations.add("POWL"); // Powell
-        stations.add("MONT"); // Montgomery
-        stations.add("EMBR"); // Embarcadero
-        stations.add("WOAK"); // West Oakland
-        stations.add("LAKE"); // Lake Merritt
-        stations.add("FTVL"); // Fruitvale
-        stations.add("COLS"); // Coliseum
-        stations.add("SANL"); // San Leandro
-        stations.add("BAYF"); // Bayfaire
-        stations.add("HAYW"); // Hayward
-        stations.add("SHAY"); // South Hayward
-        stations.add("UCTY"); // Union City
-        stations.add("FRMT"); // Fremont
+        stations.put("12th", "12th St. Oakland City Center");
+        stations.put("16th", "16th St. Mission(SF)");
+        stations.put("19th", "12th St. 19th St. Oakland");
+        stations.put("24th", "24th St. Mission(SF)");
+        stations.put("ashb", "Ashby (Berkeley)");
+        stations.put("balb", "Balboa Park(SF)");
+        stations.put("bayf", "Bay Fair(San Leandro)");
+        stations.put("cast", "Castro Valley");
+        stations.put("civc", "Civic Center(SF)");
+        stations.put("cols", "Coliseum");
+        stations.put("colm", "Colma");
+        stations.put("conc", "Concord");
+        stations.put("daly", "Daly City");
+        stations.put("dbrk", "Downtown Berkeley");
+        stations.put("dubl", "Dublin/Pleasanton");
+        stations.put("deln", "El Cerrito del Norte");
+        stations.put("plza", "El Cerrito Plaza");
+        stations.put("embr", "Embarcadero(SF)");
+        stations.put("frmt", "Fremont");
+        stations.put("ftvl", "Fruitvale(Oakland)");
+        stations.put("glen", "Glen Park(SF)");
+        stations.put("hayw", "Hayward");
+        stations.put("lafy", "Lafayette");
+        stations.put("lake", "Lake Merritt(Oakland)");
+        stations.put("mcar", "MacArthur (Oakland)");
+        stations.put("mlbr", "Millbrae");
+        stations.put("mont", "Montgomery St. (SF)");
+        stations.put("nbrk", "North Berkeley");
+        stations.put("ncon", "North Concord/Martinez");
+        stations.put("oakl", "Oakland Int'l Airport");
+        stations.put("orin", "Orinda");
+        stations.put("pitt", "Pittsburg/Bay Point");
+        stations.put("phil", "Pleasant Hill");
+        stations.put("powl", "Powell St. (SF)");
+        stations.put("rich", "Richmond");
+        stations.put("rock", "Rockridge(Oakland)");
+        stations.put("sbrn", "San Bruno");
+        stations.put("sfia", "San Francisco Int'l Airport");
+        stations.put("sanl", "San Leandro");
+        stations.put("shay", "South Hayward");
+        stations.put("ssan", "South San Francisco");
+        stations.put("ucty", "Union City");
+        stations.put("wcrk", "Walnut Creek");
+        stations.put("wdub", "West Dublin");
+        stations.put("woak", "West Oakland");
     }// end Default BartApi()
-
-
-    private static InputStream doGet(String url) throws ClientProtocolException, IOException {
-        HttpClient httpClient = new DefaultHttpClient();
-        HttpGet request = new HttpGet(url);
-        HttpResponse response = httpClient.execute(request);
-        InputStream inputStream = response.getEntity().getContent();
-
-        return inputStream;
-    }
 
 
     /*
@@ -79,22 +92,21 @@ public class BartApi {
 
         routeinfo(){ newBaseURL = baseURL + routeinfo_command; }
 
-
-
-        }
     }// end public class routeinfo
-    public String returnString() throws ClientProtocolException, IOException, ParserConfigurationException, SAXException {
+
+
+    public String getDestinationTime(String origin, String destination) throws IOException, ParserConfigurationException, SAXException {
 
         String contentString;
 
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-        Document doc = dBuilder.parse(new URL("http://api.bart.gov/api/sched.aspx?cmd=depart&orig=ASHB&dest=CIVC&date=now&key=MW9S-E7SL-26DU-VV8V&b=2&a=2&l=1").openStream());
+        Document doc = dBuilder.parse(new URL("http://api.bart.gov/api/sched.aspx?cmd=depart&orig=" + origin + "&dest=" + destination + "&date=now&key=MW9S-E7SL-26DU-VV8V&b=2&a=2&l=1").openStream());
         doc.getDocumentElement().normalize();
         NodeList nList = doc.getElementsByTagName("trip");
 
-        contentString = "Origin: " + doc.getElementsByTagName("origin").item(0).getTextContent() + "\n" +
-                "Destination: " + doc.getElementsByTagName("destination").item(0).getTextContent() + "\n";
+        contentString = "Origin: " + stations.get(doc.getElementsByTagName("origin").item(0).getTextContent().toLowerCase()).toString() + "\n" +
+                "Destination: " + stations.get(doc.getElementsByTagName("destination").item(0).getTextContent().toLowerCase()).toString() + "\n";
 
         for (int i = 0; i < nList.getLength(); i++)
         {
