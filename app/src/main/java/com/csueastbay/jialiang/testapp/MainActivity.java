@@ -35,19 +35,41 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        new ApiDisplay().execute("");
+        /// Sample usesage of the three return string functions.
+        /// Use the flags DEPARTTIME, FARE, and BSA to call the proper methods.
+        new ApiDisplay("DALY", "BALB", "DEPARTTIME").execute("");
+        new ApiDisplay("DALY", "BALB", "FARE").execute("");
+        new ApiDisplay("DALY", "BALB", "BSA").execute("");
     }
 
     public class ApiDisplay extends AsyncTask<String, Void, String> {
 
-        private String ApiString;
+        private String ReturnString;
+        private String Origin;
+        private String Destination;
+        private String MethodFlag;
+
+        ApiDisplay(String o, String d, String f)
+        {
+            Origin = o;
+            Destination = d;
+            MethodFlag = f;
+        }
+
         @Override
         protected String doInBackground(String...params) {
-
-            BartApi testBartString = new BartApi();
             try
             {
-                ApiString = testBartString.getDestinationTime("DALY","BALB");
+                BartApi testBartString = new BartApi();
+                if(MethodFlag == "DEPARTTIME") {
+                    ReturnString = testBartString.printDestinationTime(Origin, Destination);
+                }
+                else if(MethodFlag == "FARE") {
+                    ReturnString = testBartString.printFare(Origin, Destination);
+                }
+                else if (MethodFlag == "BSA"){
+                    ReturnString = testBartString.printAdvisory();
+                }
                 return "";
             }
             catch (IOException e)
@@ -67,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             TextView test = (TextView)findViewById(R.id.test);
-            test.setText(ApiString);
+            test.setText(ReturnString);
             // might want to change "executed" for the returned string passed
             // into onPostExecute() but that is upto you
         }

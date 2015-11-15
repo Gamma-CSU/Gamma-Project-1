@@ -23,14 +23,22 @@ import java.util.Map;
  */
 public class BartApi {
     // must add command and options
-    String baseURL = "http://api.bart.gov/api/sched.aspx?cmd=" ;
+    private String baseURL = "http://api.bart.gov/api/sched.aspx?cmd=" ;
     // API key
-    String key = "key=MW9S-E7SL-26DU-VV8V&b=2&a=2&l=1" ;
-    // Station abbreviations list
+    private String key = "MW9S-E7SL-26DU-VV8V";
+
+    // Hashmap to store station code and name pairs
     Map stations = new HashMap<String, String>();
 
+    private DocumentBuilderFactory dbFactory;
+    private DocumentBuilder dBuilder ;
+    private Document doc;
+
     // Default constructor adds stations to the list
-    BartApi() {
+    BartApi() throws ParserConfigurationException {
+
+        dbFactory = DocumentBuilderFactory.newInstance();
+        dBuilder = dbFactory.newDocumentBuilder();
         stations.put("12th", "12th St. Oakland City Center");
         stations.put("16th", "16th St. Mission(SF)");
         stations.put("19th", "12th St. 19th St. Oakland");
@@ -78,30 +86,11 @@ public class BartApi {
         stations.put("woak", "West Oakland");
     }// end Default BartApi()
 
-
-    /*
-    Var: String newBaseURL - add the command and flags to the baseURL inherited from BartApi baseURL
-    Var: String routeinfo_command - routeinfo command string
-    Var: String routeinfo_route
-     */
-    public class routeinfo {
-
-        String newBaseURL; // will have the command and flags added
-        String routeinfo_command = "routeinfo" ;
-        String routeinfo_route = "route" ;
-
-        routeinfo(){ newBaseURL = baseURL + routeinfo_command; }
-
-    }// end public class routeinfo
-
-
-    public String getDestinationTime(String origin, String destination) throws IOException, ParserConfigurationException, SAXException {
+    // Returns String for Destination Time
+    public String printDestinationTime(String origin, String destination) throws IOException, ParserConfigurationException, SAXException {
 
         String contentString;
-
-        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-        Document doc = dBuilder.parse(new URL("http://api.bart.gov/api/sched.aspx?cmd=depart&orig=" + origin + "&dest=" + destination + "&date=now&key=MW9S-E7SL-26DU-VV8V&b=2&a=2&l=1").openStream());
+        doc = dBuilder.parse(new URL(baseURL + "depart&orig=" + origin + "&dest=" + destination + "&date=now&key=" + key + "&b=2&a=2&l=1").openStream());
         doc.getDocumentElement().normalize();
         NodeList nList = doc.getElementsByTagName("trip");
 
@@ -117,6 +106,38 @@ public class BartApi {
 
             contentString = contentString + "Time to Origin: " + origTimeMin + "\n" + "Time to Destination: " + destTimeMin + "\n\n";
         }
+        return contentString;
+    }
+
+    // Prints Fare
+    public String printFare(String origin, String destination) throws IOException, ParserConfigurationException, SAXException {
+
+        String contentString;
+        doc = dBuilder.parse(new URL(baseURL + "fare&orig=" + origin + "&dest=" + destination + "&date=now&key=" + key).openStream());
+        doc.getDocumentElement().normalize();
+
+        String fare = doc.getElementsByTagName("fare").item(0).getTextContent();
+        contentString = "$" + fare;
+        return contentString;
+    }
+
+    // Prints advisory if any
+    public String printAdvisory() throws IOException, ParserConfigurationException, SAXException {
+
+        String contentString = "";
+        doc = dBuilder.parse(new URL(baseURL + "bsa&date=now&key=" + key).openStream());
+        doc.getDocumentElement().normalize();
+
+        if (doc.getElementsByTagName("type").getLength() == 0)
+        {
+            contentString = "Nothing to Report";
+        }
+        else
+        {
+            String bsa = doc.getElementsByTagName("type").item(0).getTextContent();
+            contentString = bsa;
+        }
+
         return contentString;
     }
 }
