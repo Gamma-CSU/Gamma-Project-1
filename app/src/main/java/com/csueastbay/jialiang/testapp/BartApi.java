@@ -25,22 +25,16 @@ import org.xml.sax.SAXException;
  */
 public class BartApi {
 
-    private static InputStream doGet(String url) throws ClientProtocolException, IOException {
-        HttpClient httpClient = new DefaultHttpClient();
-        HttpGet request = new HttpGet(url);
-        HttpResponse response = httpClient.execute(request);
-        InputStream inputStream = response.getEntity().getContent();
 
-        return inputStream;
-    }
-
-    public String returnString() throws ClientProtocolException, IOException, ParserConfigurationException, SAXException {
+    public String returnString(String dep, String arr) throws ClientProtocolException, IOException, ParserConfigurationException, SAXException {
 
         String contentString;
+        String URL = "http://api.bart.gov/api/sched.aspx?cmd=depart&orig="+ dep + "&dest=" + arr + "&date=now&key=MW9S-E7SL-26DU-VV8V&b=2&a=2&l=1";
+
 
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-        Document doc = dBuilder.parse(new URL("http://api.bart.gov/api/sched.aspx?cmd=depart&orig=ASHB&dest=CIVC&date=now&key=MW9S-E7SL-26DU-VV8V&b=2&a=2&l=1").openStream());
+        Document doc = dBuilder.parse(new URL(URL).openStream());
         doc.getDocumentElement().normalize();
         NodeList nList = doc.getElementsByTagName("trip");
 

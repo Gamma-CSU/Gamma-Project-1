@@ -1,4 +1,57 @@
 <resources>
     <string name="app_name">testApp</string>
     <string name="action_settings">Settings</string>
+
+    <string name="departure_prompt">Choose departure</string>
+    <string name="arrival_prompt">Choose arrival</string>
+
+
+
+    <string-array name="stations">
+        <item>12th St. Oakland City Center</item>
+        <item>16th St. Mission</item>
+        <item>19th St. Oakland</item>
+        <item>24th St. Mission</item>
+        <item>Ashby</item>
+        <item>Balboa Park</item>
+        <item>Bay Fair</item>
+        <item>Castro Valley</item>
+        <item>Civic Center/UN Plaza</item>
+        <item>Coliseum</item>
+        <item>Colma</item>
+        <item>Concord</item>
+        <item>Daly City</item>
+        <item>Downtown Berkeley</item>
+        <item>Dublin/Pleasanton</item>
+        <item>El Cerrito del Norte</item>
+        <item>El Cerrito Plaza</item>
+        <item>Embarcadero</item>
+        <item>Fremont</item>
+        <item>Fruitvale</item>
+        <item>Glen Park</item>
+        <item>Hayward</item>
+        <item>Lafayette</item>
+        <item>Lake Merritt</item>
+        <item>MacArthur</item>
+        <item>Millbrae</item>
+        <item>Montgomery St.</item>
+        <item>North Berkeley</item>
+        <item>North Concord/Martinez</item>
+        <item>Oakland Intl Airport</item>
+        <item>Orinda</item>
+        <item>Pittsburg/Bay Point</item>
+        <item>Pleasant Hill/Contra Costa Centre</item>
+        <item>Powell St.</item>
+        <item>Richmond</item>
+        <item>Rockridge</item>
+        <item>San Bruno</item>
+        <item>San Francisco Intl Airport</item>
+        <item>San Leandro</item>
+        <item>South Hayward</item>
+        <item>South San Francisco</item>
+        <item>Union City</item>
+        <item>Walnut Creek</item>
+        <item>West Dublin/Pleasanton</item>
+        <item>West Oakland</item>
+    </string-array>
 </resources>

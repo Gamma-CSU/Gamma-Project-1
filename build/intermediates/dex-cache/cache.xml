@@ -2,67 +2,39 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Jialiang\AndroidStudioProjects\testApp\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jar="C:\Users\Odz\Documents\GitHub\Gamma-Project-1\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="C:\Users\Jialiang\AndroidStudioProjects\testApp\app\build\intermediates\pre-dexed\debug\classes-9cfaf856e6288ed633b2be28b1c172204bb33600.jar" />
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="C:\Users\Odz\Documents\GitHub\Gamma-Project-1\app\build\intermediates\pre-dexed\debug\classes-3bb7891f41f78ba8abaa129b2b41ca61f3b7714b.jar" />
     </item>
     <item
-        jar="C:\Users\Jialiang\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jar="C:\Users\Odz\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="C:\Users\Jialiang\AndroidStudioProjects\testApp\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-d405b76209fbaec30189a797b65dce05c7cb8e38.jar" />
+        <dex dex="C:\Users\Odz\Documents\GitHub\Gamma-Project-1\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-6b079434f9f32718a44abb8e44f56f76c44bc198.jar" />
     </item>
     <item
-        jar="C:\Users\Jialiang\Google Drive\SCHOOL\2015 Fall\CS4310 Software Engineering\Project\Gamma-Project-1\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="C:\Users\Jialiang\Google Drive\SCHOOL\2015 Fall\CS4310 Software Engineering\Project\Gamma-Project-1\app\build\intermediates\pre-dexed\debug\classes-b5342fe67eff2214bdeb6442ed934adce52ac3eb.jar" />
-    </item>
-    <item
-        jar="C:\Users\Jialiang\Google Drive\SCHOOL\2015 Fall\CS4310 Software Engineering\Project\Gamma-Project-1\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jar="C:\Users\Odz\Documents\GitHub\Gamma-Project-1\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="C:\Users\Jialiang\Google Drive\SCHOOL\2015 Fall\CS4310 Software Engineering\Project\Gamma-Project-1\app\build\intermediates\pre-dexed\debug\classes-9648bdfa9133a394b1c4c1ff40378b002aeb259a.jar" />
+        <dex dex="C:\Users\Odz\Documents\GitHub\Gamma-Project-1\app\build\intermediates\pre-dexed\debug\classes-20382fab205f5b21f8f8f81c59018bf6eb290e61.jar" />
     </item>
     <item
-        jar="C:\Users\Jialiang\AndroidStudioProjects\testApp\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
+        jar="C:\Users\Odz\Documents\GitHub\Gamma-Project-1\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="C:\Users\Jialiang\AndroidStudioProjects\testApp\app\build\intermediates\pre-dexed\debug\classes-a62da3172201d4c9ee28522462d66318ee45ce54.jar" />
+        <dex dex="C:\Users\Odz\Documents\GitHub\Gamma-Project-1\app\build\intermediates\pre-dexed\debug\classes-279bf56f0dcf04ac4a70e941dc489bc6d4c8ddc4.jar" />
     </item>
     <item
-        jar="C:\Users\Jialiang\Google Drive\SCHOOL\2015 Fall\CS4310 Software Engineering\Project\Gamma-Project-1\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jar="C:\Users\Odz\Documents\GitHub\Gamma-Project-1\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="C:\Users\Jialiang\Google Drive\SCHOOL\2015 Fall\CS4310 Software Engineering\Project\Gamma-Project-1\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-92c231f60e1db2f8b35df12c77cdb72861014c2e.jar" />
-    </item>
-    <item
-        jar="C:\Users\Jialiang\AndroidStudioProjects\testApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="C:\Users\Jialiang\AndroidStudioProjects\testApp\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-6a950f7e1f2b077f5e302dc31d8f996f81b71e57.jar" />
-    </item>
-    <item
-        jar="C:\Users\Jialiang\Google Drive\SCHOOL\2015 Fall\CS4310 Software Engineering\Project\Gamma-Project-1\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="C:\Users\Jialiang\Google Drive\SCHOOL\2015 Fall\CS4310 Software Engineering\Project\Gamma-Project-1\app\build\intermediates\pre-dexed\debug\classes-eebd77d6dfab28be2d2862d0027dd1fe1fe5c2f0.jar" />
-    </item>
-    <item
-        jar="C:\Users\Jialiang\AndroidStudioProjects\testApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="C:\Users\Jialiang\AndroidStudioProjects\testApp\app\build\intermediates\pre-dexed\debug\classes-7d13ea1878b0bdb0d7712d120b7ce06a6ca68c7e.jar" />
+        <dex dex="C:\Users\Odz\Documents\GitHub\Gamma-Project-1\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-3a61958d3620757f44ddc526e2c1f69ec7fbb749.jar" />
     </item>
 
 </items>
