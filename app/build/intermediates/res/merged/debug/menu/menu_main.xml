@@ -4,4 +4,4 @@
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
 </menu>
-<!-- From: file:/C:/Users/Odz/Documents/GitHub/Gamma-Project-1/app/src/main/res/menu/menu_main.xml -->
+<!-- From: file:/C:/Users/Jialiang/Google%20Drive/SCHOOL/2015%20Fall/CS4310%20Software%20Engineering/Project/Gamma-Project-1/app/src/main/res/menu/menu_main.xml -->
